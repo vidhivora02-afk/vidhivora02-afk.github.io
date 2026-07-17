@@ -304,3 +304,87 @@ transition:.3s;
 transform:translateY(-5px);
 
 }
+
+/* ===========================
+   MOBILE RESPONSIVE DESIGN
+=========================== */
+
+@media (max-width:768px){
+
+.navbar{
+padding:15px 20px;
+flex-direction:column;
+gap:15px;
+}
+
+.nav-links{
+flex-direction:column;
+gap:15px;
+text-align:center;
+}
+
+.hero{
+flex-direction:column;
+padding:120px 25px 60px;
+text-align:center;
+}
+
+.hero-left{
+width:100%;
+}
+
+.hero-right{
+width:100%;
+margin-top:40px;
+display:flex;
+justify-content:center;
+}
+
+.hero-left h1{
+font-size:46px;
+}
+
+.hero-left h2{
+font-size:22px;
+}
+
+.hero-left p{
+font-size:17px;
+}
+
+.buttons{
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.finance-card{
+width:100%;
+max-width:340px;
+}
+
+.about{
+padding:70px 25px;
+text-align:center;
+}
+
+.about h2{
+font-size:36px;
+}
+
+.about p{
+font-size:18px;
+}
+
+.case-preview{
+padding:70px 25px;
+}
+
+.case-preview h2{
+font-size:36px;
+}
+
+.case-preview p{
+font-size:18px;
+}
+
+}
