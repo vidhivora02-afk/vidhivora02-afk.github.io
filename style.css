@@ -313,14 +313,22 @@ transform:translateY(-5px);
 
 .navbar{
 padding:15px 20px;
-flex-direction:column;
-gap:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 .nav-links{
-flex-direction:column;
-gap:15px;
-text-align:center;
+display:flex;
+flex-direction:row;
+gap:12px;
+font-size:12px;
+overflow-x:auto;
+white-space:nowrap;
+}
+
+.nav-links::-webkit-scrollbar{
+display:none;
 }
 
 .hero{
