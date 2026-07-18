@@ -1,0 +1,82 @@
+/* ============================================================
+   PROJECTS DATA
+   ------------------------------------------------------------
+   This is the ONLY file you need to edit to add, remove, or
+   change a project on your site. The homepage reads this array
+   and builds the ledger + pop-up detail cards automatically.
+
+   HOW TO ADD A NEW PROJECT:
+   1. Copy one whole { ... } block below (including the commas).
+   2. Paste it as a new entry in the projectsData array.
+   3. Change the text inside the quotes to describe YOUR project.
+   4. category must be one of: "Valuation", "M&A", "Risk Advisory",
+      "Financial Modelling", "Research"  (or add a new one — the
+      filter buttons on the site update automatically).
+   5. Save the file and refresh the page. That's it — no HTML
+      or CSS editing required.
+   ============================================================ */
+
+const projectsData = [
+  {
+    title: "DCF Valuation of a Listed FMCG Company",
+    category: "Valuation",
+    year: "2024",
+    summary: "Built a full discounted cash flow model to estimate intrinsic share value and compared it against market price.",
+    details: [
+      "Forecasted 5-year revenue, margins and free cash flow from historical financials",
+      "Estimated WACC using CAPM and the company's capital structure",
+      "Ran sensitivity analysis on growth rate and discount rate assumptions",
+      "Benchmarked output against comparable company trading multiples"
+    ],
+    link: ""
+  },
+  {
+    title: "M&A Deal Case Study — Synergy & Structuring",
+    category: "M&A",
+    year: "2024",
+    summary: "Analysed a hypothetical acquisition, evaluating deal rationale, synergy value and financing structure.",
+    details: [
+      "Identified strategic rationale and quantified expected synergies",
+      "Modelled combined entity pro-forma financials",
+      "Compared cash, stock and mixed consideration structures",
+      "Assessed accretion / dilution impact on EPS"
+    ],
+    link: ""
+  },
+  {
+    title: "Enterprise Risk Assessment Framework",
+    category: "Risk Advisory",
+    year: "2023",
+    summary: "Developed a risk register and heat-map for a mid-size business covering financial, operational and compliance risk.",
+    details: [
+      "Mapped key risk categories against likelihood and impact",
+      "Proposed mitigation and control measures for top risks",
+      "Built a one-page risk dashboard for management reporting"
+    ],
+    link: ""
+  },
+  {
+    title: "Three-Statement Financial Model",
+    category: "Financial Modelling",
+    year: "2023",
+    summary: "Built a fully linked income statement, balance sheet and cash flow model with scenario toggles.",
+    details: [
+      "Linked all three statements with working capital and debt schedules",
+      "Added best / base / worst case scenario switch",
+      "Built covenant and ratio checks for lender reporting"
+    ],
+    link: ""
+  },
+  {
+    title: "Equity Research Note — Sector Deep Dive",
+    category: "Research",
+    year: "2023",
+    summary: "Wrote a sector research note covering industry structure, competitive positioning and a buy/hold/sell view.",
+    details: [
+      "Analysed industry drivers, margins and competitive moat",
+      "Built a comparable company valuation table",
+      "Concluded with an investment thesis and key risks to the view"
+    ],
+    link: ""
+  }
+];
