@@ -3,9 +3,9 @@
    You generally shouldn't need to touch this file. Edit
    projects-data.js and videos-data.js to change content.
    ============================================================ */
- 
+
 document.addEventListener("DOMContentLoaded", () => {
- 
+
   /* ---------- Mobile nav ---------- */
   const navToggle = document.querySelector(".nav-toggle");
   const navLinks = document.querySelector(".nav-links");
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       navLinks.classList.remove("open");
     });
   });
- 
+
   /* ---------- Active nav link on scroll ---------- */
   const sections = document.querySelectorAll("section[id]");
   const navAnchors = document.querySelectorAll(".nav-links a");
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, { rootMargin: "-45% 0px -50% 0px" });
   sections.forEach(s => navObserver.observe(s));
- 
+
   /* ---------- Scroll reveal ---------- */
   const revealEls = document.querySelectorAll(".reveal");
   const revealObserver = new IntersectionObserver((entries, obs) => {
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, { threshold: 0.15 });
   revealEls.forEach(el => revealObserver.observe(el));
- 
+
   /* ---------- Animated stats ---------- */
   const statEls = document.querySelectorAll(".stat .num");
   const statObserver = new IntersectionObserver((entries, obs) => {
@@ -70,11 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, { threshold: 0.5 });
   statEls.forEach(el => statObserver.observe(el));
- 
+
   /* ---------- Ticker duplication for seamless loop ---------- */
   const track = document.querySelector(".ticker-track");
   if (track) track.innerHTML += track.innerHTML;
- 
+
   /* ================================================================
      PROJECTS LEDGER — rendered from projectsData (projects-data.js)
      ================================================================ */
@@ -82,14 +82,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const filtersEl = document.getElementById("filters");
   const modalOverlay = document.getElementById("modal-overlay");
   const modalContent = document.getElementById("modal-content");
- 
+
   let activeCategory = "All";
- 
+
   function uniqueCategories() {
     const set = new Set(projectsData.map(p => p.category));
     return ["All", ...Array.from(set)];
   }
- 
+
   function renderFilters() {
     filtersEl.innerHTML = "";
     uniqueCategories().forEach(cat => {
@@ -104,18 +104,18 @@ document.addEventListener("DOMContentLoaded", () => {
       filtersEl.appendChild(btn);
     });
   }
- 
+
   function renderLedger() {
     ledgerEl.innerHTML = "";
     const list = activeCategory === "All"
       ? projectsData
       : projectsData.filter(p => p.category === activeCategory);
- 
+
     if (list.length === 0) {
       ledgerEl.innerHTML = `<div class="ledger-empty">No entries in this category yet.</div>`;
       return;
     }
- 
+
     list.forEach((p, i) => {
       const row = document.createElement("div");
       row.className = "ledger-row";
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ledgerEl.appendChild(row);
     });
   }
- 
+
   function openModal(p) {
     modalContent.innerHTML = `
       <button class="modal-close" aria-label="Close">&times;</button>
@@ -150,27 +150,27 @@ document.addEventListener("DOMContentLoaded", () => {
     modalContent.querySelector(".modal-close").addEventListener("click", closeModal);
     modalOverlay.classList.add("open");
   }
- 
+
   function closeModal() {
     modalOverlay.classList.remove("open");
   }
- 
+
   modalOverlay.addEventListener("click", (e) => {
     if (e.target === modalOverlay) closeModal();
   });
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeModal();
   });
- 
+
   renderFilters();
   renderLedger();
- 
+
   /* ================================================================
      ACCA VIDEO LIBRARY — rendered from videosData (videos-data.js)
      ================================================================ */
   const videoGrid = document.getElementById("video-grid");
   const videoEmpty = document.getElementById("videos-empty");
- 
+
   if (typeof videosData !== "undefined" && videosData.length > 0) {
     videoEmpty.style.display = "none";
     videoGrid.style.display = "grid";
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
     videoGrid.style.display = "none";
     videoEmpty.style.display = "block";
   }
- 
+
   /* ---------- Contact form (mailto) ---------- */
   const form = document.getElementById("contact-form");
   if (form) {
@@ -204,3 +204,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
