@@ -1,0 +1,205 @@
+/* ============================================================
+   SITE BEHAVIOUR
+   You generally shouldn't need to touch this file. Edit
+   projects-data.js and videos-data.js to change content.
+   ============================================================ */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ---------- Mobile nav ---------- */
+  const navToggle = document.querySelector(".nav-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  navToggle.addEventListener("click", () => {
+    navToggle.classList.toggle("open");
+    navLinks.classList.toggle("open");
+  });
+  navLinks.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => {
+      navToggle.classList.remove("open");
+      navLinks.classList.remove("open");
+    });
+  });
+
+  /* ---------- Active nav link on scroll ---------- */
+  const sections = document.querySelectorAll("section[id]");
+  const navAnchors = document.querySelectorAll(".nav-links a");
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navAnchors.forEach(a => a.classList.remove("active"));
+        const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add("active");
+      }
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  sections.forEach(s => navObserver.observe(s));
+
+  /* ---------- Scroll reveal ---------- */
+  const revealEls = document.querySelectorAll(".reveal");
+  const revealObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  /* ---------- Animated stats ---------- */
+  const statEls = document.querySelectorAll(".stat .num");
+  const statObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.target, 10);
+      const suffix = el.dataset.suffix || "";
+      let current = 0;
+      const step = Math.max(1, Math.round(target / 40));
+      const tick = () => {
+        current += step;
+        if (current >= target) {
+          el.textContent = target + suffix;
+        } else {
+          el.textContent = current + suffix;
+          requestAnimationFrame(tick);
+        }
+      };
+      tick();
+      obs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  statEls.forEach(el => statObserver.observe(el));
+
+  /* ---------- Ticker duplication for seamless loop ---------- */
+  const track = document.querySelector(".ticker-track");
+  if (track) track.innerHTML += track.innerHTML;
+
+  /* ================================================================
+     PROJECTS LEDGER — rendered from projectsData (projects-data.js)
+     ================================================================ */
+  const ledgerEl = document.getElementById("ledger");
+  const filtersEl = document.getElementById("filters");
+  const modalOverlay = document.getElementById("modal-overlay");
+  const modalContent = document.getElementById("modal-content");
+
+  let activeCategory = "All";
+
+  function uniqueCategories() {
+    const set = new Set(projectsData.map(p => p.category));
+    return ["All", ...Array.from(set)];
+  }
+
+  function renderFilters() {
+    filtersEl.innerHTML = "";
+    uniqueCategories().forEach(cat => {
+      const btn = document.createElement("button");
+      btn.className = "filter-btn" + (cat === activeCategory ? " active" : "");
+      btn.textContent = cat;
+      btn.addEventListener("click", () => {
+        activeCategory = cat;
+        renderFilters();
+        renderLedger();
+      });
+      filtersEl.appendChild(btn);
+    });
+  }
+
+  function renderLedger() {
+    ledgerEl.innerHTML = "";
+    const list = activeCategory === "All"
+      ? projectsData
+      : projectsData.filter(p => p.category === activeCategory);
+
+    if (list.length === 0) {
+      ledgerEl.innerHTML = `<div class="ledger-empty">No entries in this category yet.</div>`;
+      return;
+    }
+
+    list.forEach((p, i) => {
+      const row = document.createElement("div");
+      row.className = "ledger-row";
+      row.setAttribute("tabindex", "0");
+      row.setAttribute("role", "button");
+      row.setAttribute("aria-label", `Open case study: ${p.title}`);
+      row.innerHTML = `
+        <div class="no">${String(i + 1).padStart(2, "0")}</div>
+        <div class="title">${p.title}<small>${p.summary}</small></div>
+        <div class="tag">${p.category}</div>
+        <div class="year">${p.year}</div>
+        <div class="arrow">→</div>
+      `;
+      const open = () => openModal(p);
+      row.addEventListener("click", open);
+      row.addEventListener("keypress", (e) => { if (e.key === "Enter") open(); });
+      ledgerEl.appendChild(row);
+    });
+  }
+
+  function openModal(p) {
+    modalContent.innerHTML = `
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <span class="tag">${p.category}</span>
+      <h3>${p.title}</h3>
+      <div class="meta">${p.year}</div>
+      <p>${p.summary}</p>
+      <ul>${p.details.map(d => `<li>${d}</li>`).join("")}</ul>
+      ${p.link ? `<a class="modal-link" href="${p.link}" target="_blank" rel="noopener">View full write-up →</a>` : ""}
+    `;
+    modalContent.querySelector(".modal-close").addEventListener("click", closeModal);
+    modalOverlay.classList.add("open");
+  }
+
+  function closeModal() {
+    modalOverlay.classList.remove("open");
+  }
+
+  modalOverlay.addEventListener("click", (e) => {
+    if (e.target === modalOverlay) closeModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+
+  renderFilters();
+  renderLedger();
+
+  /* ================================================================
+     ACCA VIDEO LIBRARY — rendered from videosData (videos-data.js)
+     ================================================================ */
+  const videoGrid = document.getElementById("video-grid");
+  const videoEmpty = document.getElementById("videos-empty");
+
+  if (typeof videosData !== "undefined" && videosData.length > 0) {
+    videoEmpty.style.display = "none";
+    videoGrid.style.display = "grid";
+    videosData.forEach(v => {
+      const card = document.createElement("div");
+      card.className = "video-card";
+      card.innerHTML = `
+        <span class="badge">${v.level || "ACCA"}</span>
+        <h4>${v.title}</h4>
+        <p>${v.description}</p>
+        ${v.youtubeId ? `<a class="modal-link" style="color:#F6F2E9;border-color:#C9A050" href="https://www.youtube.com/watch?v=${v.youtubeId}" target="_blank" rel="noopener">Watch on YouTube →</a>` : ""}
+      `;
+      videoGrid.appendChild(card);
+    });
+  } else {
+    videoGrid.style.display = "none";
+    videoEmpty.style.display = "block";
+  }
+
+  /* ---------- Contact form (mailto) ---------- */
+  const form = document.getElementById("contact-form");
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+      const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
+      const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+      window.location.href = `mailto:YOUR_EMAIL@example.com?subject=${subject}&body=${body}`;
+    });
+  }
+});
