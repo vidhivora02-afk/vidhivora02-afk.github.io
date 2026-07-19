@@ -425,6 +425,211 @@
     </form>
   </div>
 </section>
+
+
+ <!-- ============================================================
+     WHY HIRE ME — paste this ENTIRE block right BEFORE
+     the <footer> tag in index.html (i.e. after the </section>
+     that closes id="contact")
+     ============================================================ -->
+ 
+<style>
+  #why-hire{ padding-top: 20px; }
+  #why-hire .wh-sub{
+    color: var(--ink-soft, #666);
+    max-width: 50ch;
+    margin: 0 0 40px;
+    line-height: 1.6;
+  }
+ 
+  #why-hire .wh-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+    margin-bottom:40px;
+  }
+ 
+  #why-hire details.wh-card{
+    background:#fff;
+    border:1.5px solid var(--ink,#16213A);
+    border-radius:14px;
+    overflow:hidden;
+    position:relative;
+  }
+  #why-hire details.wh-card summary{
+    list-style:none; cursor:pointer;
+    padding:20px 20px 18px;
+    display:flex; flex-direction:column; gap:8px;
+  }
+  #why-hire details.wh-card summary::-webkit-details-marker{ display:none; }
+  #why-hire .wh-exhibit{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:1.5px; text-transform:uppercase;
+    color:#FF6B5B;
+  }
+  #why-hire .wh-headline{
+    font-family: var(--font-display,'Fraunces',serif);
+    font-size:16.5px; font-weight:600; color:var(--ink,#16213A);
+    line-height:1.4;
+  }
+  #why-hire .wh-toggle{
+    position:absolute; top:18px; right:18px;
+    font-size:18px; color:var(--ink,#16213A);
+    transition:transform .25s ease;
+  }
+  #why-hire details.wh-card[open] .wh-toggle{ transform:rotate(45deg); }
+  #why-hire .wh-body{
+    padding:0 20px 20px;
+    font-family:'Inter',sans-serif; font-size:13.5px; line-height:1.6;
+    color:var(--ink-soft,#444);
+    border-top:1px dashed rgba(0,0,0,0.12);
+    padding-top:14px;
+  }
+  #why-hire .wh-body strong{ color:var(--ink,#16213A); }
+ 
+  #why-hire .wh-verdict{
+    background:#FF6B5B; color:#FFF8F0;
+    border-radius:18px; padding:36px 28px;
+    text-align:center; position:relative; overflow:hidden;
+  }
+  #why-hire .wh-verdict::before{
+    content:""; position:absolute; inset:9px;
+    border:1.5px dashed rgba(255,248,240,.5); border-radius:11px; pointer-events:none;
+  }
+  #why-hire .wh-verdict .wh-stamp{
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:2px;
+    text-transform:uppercase; opacity:.85; margin-bottom:10px;
+  }
+  #why-hire .wh-verdict h3{
+    font-family: var(--font-display,'Fraunces',serif); font-weight:700;
+    font-size:clamp(20px,3vw,28px); margin:0 0 14px;
+  }
+  #why-hire .wh-verdict p{
+    font-family:'Inter',sans-serif; font-size:14px; line-height:1.6;
+    max-width:520px; margin:0 auto 20px; opacity:.95;
+  }
+  #why-hire .wh-verdict a.wh-cta{
+    display:inline-block; background:#FFF8F0; color:#FF6B5B;
+    font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:13px;
+    letter-spacing:.5px; padding:12px 24px; border-radius:30px;
+    text-decoration:none;
+  }
+ 
+  @media(max-width:640px){
+    #why-hire .wh-headline{ font-size:15px; }
+  }
+</style>
+ 
+<section id="why-hire">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Closing Arguments</div>
+      <h2>Why hire me over the other candidates</h2>
+      <p class="wh-sub">Ten exhibits, presented for your consideration. Tap each one for the full argument.</p>
+    </div>
+ 
+    <div class="wh-grid">
+ 
+      <details class="wh-card">
+        <summary>
+          <span class="wh-exhibit">Exhibit 01</span>
+          <span class="wh-headline">I already speak finance fluently</span>
+          <span class="wh-toggle">+</span>
+        </summary>
+        <div class="wh-body">In the final stretch of ACCA, which means I'm not learning the fundamentals on your time — I already have the technical base and I'm actively sharpening it every week.</div>
+      </details>
+ 
+      <details class="wh-card">
+        <summary>
+          <span class="wh-exhibit">Exhibit 02</span>
+          <span class="wh-headline">Real reps, not just theory</span>
+          <span class="wh-toggle">+</span>
+        </summary>
+        <div class="wh-body">Hands-on experience through a <strong>Risk Advisory &amp; Forensic Audit</strong> internship at S N &amp; Co, plus prior work experience at Elmec — I've already sat in the room and done the work, not just read about it.</div>
+      </details>
+ 
+      <details class="wh-card">
+        <summary>
+          <span class="wh-exhibit">Exhibit 03</span>
+          <span class="wh-headline">A self-built portfolio, before anyone asked</span>
+          <span class="wh-toggle">+</span>
+        </summary>
+        <div class="wh-body">Every case study and financial model on this site was built on my own initiative, not assigned as a job requirement. That's the kind of self-starter energy I bring by default.</div>
+      </details>
+ 
+      <details class="wh-card">
+        <summary>
+          <span class="wh-exhibit">Exhibit 04</span>
+          <span class="wh-headline">Actual leadership experience</span>
+          <span class="wh-toggle">+</span>
+        </summary>
+        <div class="wh-body">Served as Chairperson of my college's leading committee — meaning I've already led people, owned outcomes, and made decisions under pressure, not just followed instructions.</div>
+      </details>
+ 
+      <details class="wh-card">
+        <summary>
+          <span class="wh-exhibit">Exhibit 05</span>
+          <span class="wh-headline">Certified deadline-juggler</span>
+          <span class="wh-toggle">+</span>
+        </summary>
+        <div class="wh-body">Balanced a full college course load with ACCA papers running in parallel for years, often with overlapping exam seasons. Tight deadlines don't rattle me — I've been training for this.</div>
+      </details>
+ 
+      <details class="wh-card">
+        <summary>
+          <span class="wh-exhibit">Exhibit 06</span>
+          <span class="wh-headline">Fast learner, faster adapter</span>
+          <span class="wh-toggle">+</span>
+        </summary>
+        <div class="wh-body">New tool, new software, new process — give me a short runway with a bit of patience and no unnecessary scolding, and I'll be flying it solo. The results speak for themselves once I've had the room to learn.</div>
+      </details>
+ 
+      <details class="wh-card">
+        <summary>
+          <span class="wh-exhibit">Exhibit 07</span>
+          <span class="wh-headline">No-fluff communicator</span>
+          <span class="wh-toggle">+</span>
+        </summary>
+        <div class="wh-body">I'll give you the direct answer, not a ten-slide deck to bury it in. Clear, structured communication — the same way I approach a financial model.</div>
+      </details>
+ 
+      <details class="wh-card">
+        <summary>
+          <span class="wh-exhibit">Exhibit 08</span>
+          <span class="wh-headline">Fully locked in, for the hours that count</span>
+          <span class="wh-toggle">+</span>
+        </summary>
+        <div class="wh-body">When I'm on the clock, I'm actually on — focused, no clock-watching. I just also believe the hours I commit to should be the hours I'm asked to give, which keeps me sharp instead of running on empty.</div>
+      </details>
+ 
+      <details class="wh-card">
+        <summary>
+          <span class="wh-exhibit">Exhibit 09</span>
+          <span class="wh-headline">Low-drama, high-output</span>
+          <span class="wh-toggle">+</span>
+        </summary>
+        <div class="wh-body">I don't need micromanaging or hand-holding. Give me the goal and the context, and I'll find the way there — and if I need to double-check something, I'll ask upfront, not fumble silently.</div>
+      </details>
+ 
+      <details class="wh-card">
+        <summary>
+          <span class="wh-exhibit">Exhibit 10</span>
+          <span class="wh-headline">I want to be good at this, not just employed</span>
+          <span class="wh-toggle">+</span>
+        </summary>
+        <div class="wh-body">Curiosity plus ambition means I outgrow a role quickly — which sounds risky until you realise that's exactly the kind of person you want compounding in your corner. A little progress each day adds up to a very different hire a year from now.</div>
+      </details>
+ 
+    </div>
+ 
+    <div class="wh-verdict">
+      <div class="wh-stamp">Verdict</div>
+      <h3>Hire recommended.</h3>
+      <p>Technically sound, self-driven, and genuinely easy to work with — with the added bonus of someone who'll show up recharged instead of running on fumes, because yes, I will be using my holidays.</p>
+      <a class="wh-cta" href="#contact">Let's talk →</a>
+    </div>
+  </div>
+</section>
  
 <footer>
   <div class="wrap footer-inner">
