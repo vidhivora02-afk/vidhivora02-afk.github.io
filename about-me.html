@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vidhi Vora — About Me</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700;900&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap');
+
+  :root{
+    --teal:#0F3B3D;
+    --coral:#FF6B5B;
+    --yellow:#FFC857;
+    --cream:#FFF8F0;
+    --ink:#16213A;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Space Grotesk',sans-serif;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px 80px;}
+
+  /* ---------- TOP BAR / HERO ---------- */
+  .hero{
+    background:var(--teal);
+    color:var(--cream);
+    border-radius:0 0 32px 32px;
+    padding:56px 24px 60px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"✈";
+    position:absolute;
+    top:20px; right:40px;
+    font-size:120px;
+    opacity:0.06;
+    transform:rotate(20deg);
+  }
+  .hero-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1;}
+  .eyebrow{
+    font-family:'Space Mono',monospace;
+    font-size:13px;letter-spacing:2px;text-transform:uppercase;
+    color:var(--yellow);margin-bottom:10px;
+  }
+  .hero h1{
+    font-family:'Fraunces',serif;font-weight:900;
+    font-size:clamp(32px,5vw,52px);margin:0 0 12px;
+  }
+  .hero p{font-size:17px;line-height:1.6;color:rgba(255,248,240,0.85);max-width:600px;margin:0;}
+  .hero-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}
+  .hero-tags span{
+    font-family:'Space Mono',monospace;font-size:12px;
+    border:1px solid rgba(255,248,240,0.4);
+    padding:5px 12px;border-radius:20px;
+  }
+
+  /* ---------- SECTION LABEL ---------- */
+  .section-label{
+    font-family:'Space Mono',monospace;font-size:13px;letter-spacing:2px;
+    text-transform:uppercase;color:var(--coral);margin:64px 0 8px;
+  }
+  .section-title{font-family:'Fraunces',serif;font-weight:700;font-size:30px;margin:0 0 12px;}
+  .section-sub{font-size:14px;color:#555;margin:0 0 32px;max-width:600px;line-height:1.5;}
+
+  /* ---------- INTERACTIVE TIMELINE ---------- */
+  .timeline{position:relative;padding-left:36px;}
+  .timeline::before{
+    content:"";position:absolute;left:11px;top:6px;bottom:6px;width:2px;
+    background:repeating-linear-gradient(180deg,var(--ink) 0 6px,transparent 6px 12px);
+  }
+  details.stop{
+    position:relative;margin-bottom:14px;
+    background:#fff;border:2px solid var(--ink);border-radius:14px;
+    overflow:hidden;
+  }
+  details.stop::before{
+    content:"";position:absolute;left:-36px;top:22px;
+    width:14px;height:14px;border-radius:50%;
+    background:var(--yellow);border:2px solid var(--ink);
+  }
+  details.stop[open]::before{background:var(--coral);}
+  details.stop summary{
+    list-style:none;cursor:pointer;
+    padding:18px 20px;display:flex;align-items:center;gap:14px;
+    flex-wrap:wrap;
+  }
+  details.stop summary::-webkit-details-marker{display:none;}
+  .stop-year{
+    font-family:'Space Mono',monospace;font-weight:700;font-size:14px;
+    color:var(--coral);background:var(--cream);border:1px solid var(--coral);
+    border-radius:20px;padding:3px 12px;flex-shrink:0;
+  }
+  .stop-title{font-family:'Fraunces',serif;font-weight:700;font-size:17px;flex:1;min-width:180px;}
+  .stop-toggle{
+    font-family:'Space Mono',monospace;font-size:18px;color:var(--ink);
+    transition:transform 0.25s ease;flex-shrink:0;
+  }
+  details.stop[open] .stop-toggle{transform:rotate(45deg);}
+  .stop-body{
+    padding:0 20px 20px 20px;font-size:14.5px;line-height:1.6;color:#333;
+  }
+  .stop-body strong{color:var(--ink);}
+
+  /* final "loading" entry */
+  details.stop.final summary{background:var(--yellow);}
+  details.stop.final::before{background:var(--coral);}
+
+  /* ---------- STAMP GRID (fun facts / personality / boundaries) ---------- */
+  .stamp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;}
+  .stamp{
+    background:var(--cream);
+    border:2px solid var(--ink);
+    border-radius:16px;
+    padding:22px 20px;
+    position:relative;
+    transform:rotate(var(--r,-1.5deg));
+  }
+  .stamp:nth-child(2){--r:1deg;}
+  .stamp:nth-child(3){--r:-2deg;}
+  .stamp:nth-child(4){--r:1.5deg;}
+  .stamp:nth-child(5){--r:-1deg;}
+  .stamp:nth-child(6){--r:2deg;}
+  .stamp::after{
+    content:"APPROVED";
+    position:absolute;top:12px;right:14px;
+    font-family:'Space Mono',monospace;font-size:9px;letter-spacing:1px;
+    color:var(--coral);border:1px solid var(--coral);border-radius:4px;
+    padding:2px 6px;transform:rotate(8deg);opacity:0.8;
+  }
+  .stamp .icon{font-size:26px;margin-bottom:10px;display:block;}
+  .stamp h3{font-family:'Fraunces',serif;font-size:17px;margin:0 0 6px;}
+  .stamp p{font-size:13.5px;line-height:1.5;margin:0;color:#333;}
+
+  /* ---------- QUOTE POSTCARD ---------- */
+  .postcard{
+    background:var(--coral);color:var(--cream);
+    border-radius:20px;padding:44px 32px;
+    text-align:center;position:relative;overflow:hidden;
+    margin-top:64px;
+  }
+  .postcard::before{
+    content:"";position:absolute;inset:10px;
+    border:1.5px dashed rgba(255,248,240,0.5);border-radius:12px;
+    pointer-events:none;
+  }
+  .postcard .mark{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;opacity:0.85;margin-bottom:14px;}
+  .postcard blockquote{
+    font-family:'Fraunces',serif;font-weight:700;font-style:italic;
+    font-size:clamp(20px,3vw,30px);margin:0;line-height:1.4;max-width:640px;margin:0 auto;
+  }
+  .postcard .sig{margin-top:16px;font-family:'Space Mono',monospace;font-size:13px;opacity:0.85;}
+
+  @media(max-width:640px){
+    .stop-title{font-size:15.5px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= TOP BAR / HERO ================= -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Boarding pass · Seat 1A · Priority</div>
+    <h1>Hi, I'm Vidhi Vora</h1>
+    <p>Professional problem-solver, part-time (okay, full-time) daydreamer of departure boards. Currently based in one city, permanently planning the next one.</p>
+    <div class="hero-tags">
+      <span>🧭 Mission: touch every state in India, then the map</span>
+      <span>☕ Genz-certified</span>
+      <span>📈 A little progress every day</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ================= INTERACTIVE TIMELINE ================= -->
+  <div class="section-label">The journey so far</div>
+  <div class="section-title">My road map</div>
+  <p class="section-sub">Tap on any milestone to read more.</p>
+
+  <div class="timeline">
+
+    <details class="stop">
+      <summary>
+        <span class="stop-year">2021</span>
+        <span class="stop-title">Joined Narsee Monjee College for HSC</span>
+        <span class="stop-toggle">+</span>
+      </summary>
+      <div class="stop-body">Where the journey properly began — stepping into Narsee Monjee for my higher secondary years.</div>
+    </details>
+
+    <details class="stop">
+      <summary>
+        <span class="stop-year">2023</span>
+        <span class="stop-title">Started Graduation + began ACCA</span>
+        <span class="stop-toggle">+</span>
+      </summary>
+      <div class="stop-body">Continued at Narsee Monjee for my graduation, and started my <strong>ACCA</strong> journey alongside it — two things at once, right from the start.</div>
+    </details>
+
+    <details class="stop">
+      <summary>
+        <span class="stop-year">2024</span>
+        <span class="stop-title">Became Chairperson of the leading committee in college</span>
+        <span class="stop-toggle">+</span>
+      </summary>
+      <div class="stop-body">Took on a leadership role, heading the college's leading committee — a year of learning how to lead, organise and show up for people.</div>
+    </details>
+
+    <details class="stop">
+      <summary>
+        <span class="stop-year">2025</span>
+        <span class="stop-title">ACCA Professional Level + final year + first work experience</span>
+        <span class="stop-toggle">+</span>
+      </summary>
+      <div class="stop-body">
+        Started the <strong>Professional Level</strong> of ACCA while soaking up the last year of college life. Picked up some real work experience at <strong>Elmec</strong>, and kept the exam calendar packed.<br><br>
+        <strong>Honest note:</strong> this was the toughest exam stretch yet — Narsee Monjee's own college exams were relentless, and balancing them with ACCA papers at the same time meant there was barely a month without an exam to prepare for. Juggling both taught me more about time management than any course ever could.
+      </div>
+    </details>
+
+    <details class="stop">
+      <summary>
+        <span class="stop-year">2026</span>
+        <span class="stop-title">Bid farewell to college life</span>
+        <span class="stop-toggle">+</span>
+      </summary>
+      <div class="stop-body">Closed the college chapter — years of exams, committees and memories, all wrapped up.</div>
+    </details>
+
+    <details class="stop">
+      <summary>
+        <span class="stop-year">2026</span>
+        <span class="stop-title">Started internship at S N &amp; Co — Risk Advisory &amp; Forensic Audit</span>
+        <span class="stop-toggle">+</span>
+      </summary>
+      <div class="stop-body">Stepped into the professional world with an internship in <strong>Risk Advisory and Forensic Audit</strong> at S N &amp; Co — the first real taste of the industry.</div>
+    </details>
+
+    <details class="stop">
+      <summary>
+        <span class="stop-year">Sept 2026</span>
+        <span class="stop-title">Hopefully, my last ACCA paper</span>
+        <span class="stop-toggle">+</span>
+      </summary>
+      <div class="stop-body">Fingers crossed — this is set to be the final paper of the ACCA journey that started back in 2023.</div>
+    </details>
+
+    <details class="stop final">
+      <summary>
+        <span class="stop-year">2026 →</span>
+        <span class="stop-title">Upcoming chapters loading...</span>
+        <span class="stop-toggle">+</span>
+      </summary>
+      <div class="stop-body">Now looking forward to beginning my professional journey very soon. Thank you for following along this far — the adventurous part is just getting started. 🌍</div>
+    </details>
+
+  </div>
+
+  <!-- ================= FUN FACTS / PERSONALITY STAMPS ================= -->
+  <div class="section-label">Customs declaration</div>
+  <div class="section-title">Fun facts, personality &amp; house rules</div>
+  <div class="stamp-grid">
+    <div class="stamp">
+      <span class="icon">🗺️</span>
+      <h3>Life goal: collect places, not things</h3>
+      <p>The dream is to set foot in every Indian state — and honestly, every country too. Consider this your fair warning: I will be taking holidays.</p>
+    </div>
+    <div class="stamp">
+      <span class="icon">⏰</span>
+      <h3>9-to-6 means 9-to-6</h3>
+      <p>Fully focused during working hours. Overtime is welcome — with pay. Unpaid overtime is a concept I have chosen not to believe in.</p>
+    </div>
+    <div class="stamp">
+      <span class="icon">📵</span>
+      <h3>Once I clock out, I'm off the grid</h3>
+      <p>No work calls or messages after hours, please. That time belongs to my people, my plans, and me.</p>
+    </div>
+    <div class="stamp">
+      <span class="icon">🌱</span>
+      <h3>Give me a fair shot to learn</h3>
+      <p>I ask questions because I actually want to get it right. Be patient, skip the scolding, and let the results speak once I've figured it out — they will.</p>
+    </div>
+    <div class="stamp">
+      <span class="icon">🎈</span>
+      <h3>Family &amp; friends come first</h3>
+      <p>I work to fund the trips and to be there for the people I love — every function, every "we need you," every celebration. Those days are non-negotiable and don't need an explanation.</p>
+    </div>
+    <div class="stamp">
+      <span class="icon">💛</span>
+      <h3>Delicate corporate girl energy</h3>
+      <p>Kind words get the best out of me. I take feedback seriously — I just don't do well with scolding, and honestly, who does?</p>
+    </div>
+  </div>
+
+  <!-- ================= QUOTE POSTCARD ================= -->
+  <div class="postcard">
+    <div class="mark">✈ wish you were here — postcard from my desk</div>
+    <blockquote>"A little progress each day adds up to big results."</blockquote>
+    <div class="sig">— the motto I actually live by, Vidhi</div>
+  </div>
+
+</div>
+
+</body>
+</html>
