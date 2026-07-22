@@ -3,112 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vidhi Vora | Finance, Valuation & M&A Portfolio</title>
-<meta name="description" content="Vidhi Vora — ACCA student specialising in business valuation, M&A, corporate finance and risk advisory. Case studies, financial models and research.">
+<title>Vidhi Vora | Risk Advisory, Internal Audit & Forensic Accounting</title>
+<meta name="description" content="Vidhi Vora — ACCA student (12/13 papers) building toward a career in forensic accounting, internal audit, risk advisory and financial due diligence.">
  
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
- 
-<style>
-  /* ===== "My Journey" section — scoped styles, falls back gracefully
-     if --ink / --ink-soft / --font-display aren't defined in style.css ===== */
-  #journey{ padding-top: 20px; }
-  #journey .jr-sub{
-    color: var(--ink-soft, #666);
-    max-width: 46ch;
-    margin: 0 0 36px;
-    line-height: 1.6;
-  }
- 
-  /* interactive timeline */
-  #journey .jr-timeline{ position:relative; padding-left:34px; margin-bottom:64px; }
-  #journey .jr-timeline::before{
-    content:""; position:absolute; left:10px; top:6px; bottom:6px; width:2px;
-    background: repeating-linear-gradient(180deg, var(--ink, #16213A) 0 6px, transparent 6px 12px);
-  }
-  #journey details.jr-stop{
-    position:relative; margin-bottom:12px;
-    background:#fff; border:1.5px solid var(--ink, #16213A); border-radius:12px;
-    overflow:hidden;
-  }
-  #journey details.jr-stop::before{
-    content:""; position:absolute; left:-34px; top:20px;
-    width:13px; height:13px; border-radius:50%;
-    background:#FFC857; border:2px solid var(--ink, #16213A);
-  }
-  #journey details.jr-stop[open]::before{ background:#FF6B5B; }
-  #journey details.jr-stop summary{
-    list-style:none; cursor:pointer;
-    padding:16px 18px; display:flex; align-items:center; gap:12px; flex-wrap:wrap;
-    font-family: var(--font-display, 'Fraunces', serif);
-  }
-  #journey details.jr-stop summary::-webkit-details-marker{ display:none; }
-  #journey .jr-year{
-    font-family:'IBM Plex Mono', monospace; font-weight:600; font-size:12.5px;
-    color:#FF6B5B; border:1px solid #FF6B5B; border-radius:20px;
-    padding:2px 10px; flex-shrink:0; background:#fff;
-  }
-  #journey .jr-title{ font-size:16px; font-weight:600; color:var(--ink, #16213A); flex:1; min-width:180px; }
-  #journey .jr-toggle{ font-size:18px; color:var(--ink,#16213A); transition:transform .25s ease; flex-shrink:0; }
-  #journey details.jr-stop[open] .jr-toggle{ transform:rotate(45deg); }
-  #journey .jr-body{
-    padding:0 18px 18px; font-family:'Inter',sans-serif; font-size:14.5px;
-    line-height:1.6; color:var(--ink-soft,#444);
-  }
-  #journey .jr-body strong{ color:var(--ink,#16213A); }
-  #journey details.jr-stop.jr-final summary{ background:#FFC857; }
- 
-  /* personality stamps */
-  #journey .jr-stamp-grid{
-    display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:20px;
-    margin-bottom:56px;
-  }
-  #journey .jr-stamp{
-    background:#fff; border:1.5px solid var(--ink,#16213A); border-radius:14px;
-    padding:20px 18px; position:relative; transform:rotate(var(--r,-1.2deg));
-  }
-  #journey .jr-stamp:nth-child(2){--r:1deg;}
-  #journey .jr-stamp:nth-child(3){--r:-1.8deg;}
-  #journey .jr-stamp:nth-child(4){--r:1.3deg;}
-  #journey .jr-stamp:nth-child(5){--r:-1deg;}
-  #journey .jr-stamp:nth-child(6){--r:1.6deg;}
-  #journey .jr-stamp::after{
-    content:"APPROVED"; position:absolute; top:10px; right:12px;
-    font-family:'IBM Plex Mono',monospace; font-size:8.5px; letter-spacing:1px;
-    color:#FF6B5B; border:1px solid #FF6B5B; border-radius:4px;
-    padding:2px 5px; transform:rotate(8deg); opacity:.8;
-  }
-  #journey .jr-stamp .jr-icon{ font-size:24px; margin-bottom:8px; display:block; }
-  #journey .jr-stamp h3{
-    font-family: var(--font-display,'Fraunces',serif); font-size:16px; margin:0 0 6px; color:var(--ink,#16213A);
-  }
-  #journey .jr-stamp p{ font-family:'Inter',sans-serif; font-size:13px; line-height:1.5; margin:0; color:var(--ink-soft,#444); }
- 
-  /* quote postcard */
-  #journey .jr-postcard{
-    background:#FF6B5B; color:#FFF8F0; border-radius:18px; padding:40px 28px;
-    text-align:center; position:relative; overflow:hidden;
-  }
-  #journey .jr-postcard::before{
-    content:""; position:absolute; inset:9px;
-    border:1.5px dashed rgba(255,248,240,.5); border-radius:11px; pointer-events:none;
-  }
-  #journey .jr-postcard .jr-mark{
-    font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:2px;
-    text-transform:uppercase; opacity:.85; margin-bottom:12px;
-  }
-  #journey .jr-postcard blockquote{
-    font-family: var(--font-display,'Fraunces',serif); font-weight:600; font-style:italic;
-    font-size:clamp(19px,3vw,27px); margin:0 auto; max-width:620px; line-height:1.4;
-  }
-  #journey .jr-postcard .jr-sig{ margin-top:14px; font-family:'IBM Plex Mono',monospace; font-size:12.5px; opacity:.85; }
- 
-  @media(max-width:640px){
-    #journey .jr-title{ font-size:14.5px; }
-  }
-</style>
 </head>
 <body>
  
@@ -117,9 +18,11 @@
     <a href="#top" class="logo">VV</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#journey">My Journey</a></li>
-      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#expertise">Interests</a></li>
       <li><a href="#projects">Case Studies</a></li>
+      <li><a href="#concepts">Concepts</a></li>
+      <li><a href="#toolkit">Toolkit</a></li>
       <li><a href="#acca-videos">ACCA Videos</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -132,13 +35,15 @@
 <!-- HERO -->
 <section class="hero wrap">
   <div class="hero-left">
+    <div class="photo-placeholder">YOUR PHOTO HERE<br>see README</div>
     <div class="index-no">FILE NO. 001 — PROFILE</div>
     <h1>Vidhi Vora</h1>
-    <h2>Finance · Valuation · M&amp;A · Risk Advisory</h2>
+    <h2>ACCA Professional Level · Risk Advisory · Internal Audit</h2>
     <p>
-      I enjoy understanding businesses, valuing companies and turning financial
-      information into strategic insight — through analysis, research and
-      structured problem solving.
+      ACCA student (12 of 13 papers completed) with hands-on experience in
+      internal audit, forensic review and risk assessment. I'm drawn to the
+      work of asking "does this actually add up" — and building toward a
+      career in forensic accounting, internal audit and risk advisory.
     </p>
     <div class="buttons">
       <a href="#projects" class="btn">Explore My Work</a>
@@ -147,14 +52,14 @@
   </div>
   <div class="hero-right">
     <div class="finance-card">
-      <h3>Focus Areas</h3>
+      <h3>Areas I'm Interested In</h3>
       <ul>
-        <li>Business Valuation</li>
-        <li>Mergers &amp; Acquisitions</li>
-        <li>Corporate Finance</li>
+        <li>Forensic Accounting</li>
+        <li>Internal Audit</li>
         <li>Risk Advisory</li>
-        <li>Financial Modelling</li>
-        <li>Equity Research</li>
+        <li>Financial Due Diligence</li>
+        <li>Compliance Testing</li>
+        <li>IFRS Reporting</li>
       </ul>
     </div>
   </div>
@@ -163,174 +68,99 @@
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-track">
-    <span>DCF MODELLING</span>
-    <span>COMPARABLE COMPS</span>
-    <span>LBO ANALYSIS</span>
-    <span>THREE-STATEMENT MODELS</span>
-    <span>RISK HEAT-MAPS</span>
-    <span>EQUITY RESEARCH</span>
-    <span>ACCA — IN PROGRESS</span>
-    <span>M&amp;A STRUCTURING</span>
+    <span>INTERNAL AUDIT</span>
+    <span>FRAUD RISK ASSESSMENT</span>
+    <span>COMPLIANCE TESTING</span>
+    <span>IFRS REPORTING</span>
+    <span>TRANSACTION TESTING</span>
+    <span>INTERNAL CONTROLS EVALUATION</span>
+    <span>ACCA — 12/13 PAPERS</span>
+    <span>RISK ADVISORY</span>
   </div>
 </div>
+ 
+<!-- SIGNATURE MERGE ANIMATION -->
+<section class="merge-section reveal" id="merge-anim">
+  <div class="wrap">
+    <div class="merge-stage" id="merge-stage">
+      <div class="merge-block a">ENTITY A</div>
+      <div class="merge-block b">ENTITY B</div>
+      <div class="merge-result">Combined Value</div>
+    </div>
+    <p class="merge-caption">Two entities, one outcome — the question a deal always comes back to.</p>
+  </div>
+</section>
  
 <!-- ABOUT -->
 <section id="about" class="about">
   <div class="wrap about-grid">
     <div class="reveal">
       <div class="eyebrow">About</div>
-      <h2>Building a career on numbers that tell a story</h2>
+      <h2>Building toward a career in audit and risk</h2>
       <p>
-        I'm an ACCA student passionate about valuation, mergers &amp;
-        acquisitions, corporate finance, financial analysis and risk advisory.
-        My goal is to combine analytical thinking with business strategy to
-        produce financial insight that actually informs decisions — not just
-        reports that sit in a drawer.
+        I'm an ACCA Professional Level student (12 of 13 papers completed)
+        and B.Com candidate, with working knowledge of IFRS reporting,
+        internal audit, risk assessment and compliance testing. I've spent
+        my internships doing operational audits, transaction testing and
+        internal control reviews — the kind of work where the goal is to
+        find what doesn't add up before it becomes a problem.
       </p>
       <p>
-        Every case study below started as a college assignment, but was built
-        the way I'd approach it on the job: structured assumptions, a clear
-        methodology, and a conclusion someone could actually act on.
+        I'm building toward a career in forensic accounting, internal audit,
+        risk advisory and financial due diligence. The case studies below are
+        college projects, not client work — but each one was an honest attempt
+        to practise the way I'd want to think on the job: structured,
+        evidence-led, and willing to ask an uncomfortable question.
       </p>
     </div>
     <div class="reveal">
       <div class="stats">
+        <div class="stat"><span class="num" data-target="12" data-suffix="/13">0</span><span class="lbl">ACCA Papers Completed</span></div>
+        <div class="stat"><span class="num" data-target="2">0</span><span class="lbl">Audit Internships</span></div>
         <div class="stat"><span class="num" data-target="6">0</span><span class="lbl">Case Studies</span></div>
-        <div class="stat"><span class="num" data-target="5">0</span><span class="lbl">Financial Models Built</span></div>
-        <div class="stat"><span class="num" data-target="3">0</span><span class="lbl">Years Studying ACCA</span></div>
         <div class="stat"><span class="num" data-target="100" data-suffix="%">0</span><span class="lbl">Self-Driven Projects</span></div>
       </div>
     </div>
   </div>
 </section>
  
-<!-- MY JOURNEY (new) -->
-<section id="journey">
+<!-- EXPERIENCE -->
+<section id="experience" class="about">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow">My Journey</div>
-      <h2>The road so far — and the road still ahead</h2>
-      <p class="jr-sub">Tap any milestone below to read more. Fair warning: this section also explains why I'll be taking holidays.</p>
+      <div class="eyebrow">Experience</div>
+      <h2>Where I've put this into practice</h2>
+      <p>Internship work in internal audit and risk advisory, alongside academic case studies.</p>
     </div>
- 
-    <div class="jr-timeline">
-      <details class="jr-stop">
-        <summary>
-          <span class="jr-year">2021</span>
-          <span class="jr-title">Joined Narsee Monjee College for HSC</span>
-          <span class="jr-toggle">+</span>
-        </summary>
-        <div class="jr-body">Where the journey properly began — stepping into Narsee Monjee for my higher secondary years.</div>
-      </details>
- 
-      <details class="jr-stop">
-        <summary>
-          <span class="jr-year">2023</span>
-          <span class="jr-title">Started Graduation + began ACCA</span>
-          <span class="jr-toggle">+</span>
-        </summary>
-        <div class="jr-body">Continued at Narsee Monjee for my graduation, and started my <strong>ACCA</strong> journey alongside it — two things at once, right from the start.</div>
-      </details>
- 
-      <details class="jr-stop">
-        <summary>
-          <span class="jr-year">2024</span>
-          <span class="jr-title">Became Chairperson of the leading committee in college</span>
-          <span class="jr-toggle">+</span>
-        </summary>
-        <div class="jr-body">Took on a leadership role, heading the college's leading committee — a year of learning how to lead, organise and show up for people.</div>
-      </details>
- 
-      <details class="jr-stop">
-        <summary>
-          <span class="jr-year">2025</span>
-          <span class="jr-title">ACCA Professional Level + final year + first work experience</span>
-          <span class="jr-toggle">+</span>
-        </summary>
-        <div class="jr-body">
-          Started the <strong>Professional Level</strong> of ACCA while soaking up the last year of college life. Picked up some real work experience at <strong>Elmec</strong>, and kept the exam calendar packed.<br><br>
-          <strong>Honest note:</strong> this was the toughest exam stretch yet — Narsee Monjee's own college exams were relentless, and balancing them with ACCA papers at the same time meant there was barely a month without an exam to prepare for. Juggling both taught me more about time management than any course ever could.
-        </div>
-      </details>
- 
-      <details class="jr-stop">
-        <summary>
-          <span class="jr-year">2026</span>
-          <span class="jr-title">Bid farewell to college life</span>
-          <span class="jr-toggle">+</span>
-        </summary>
-        <div class="jr-body">Closed the college chapter — years of exams, committees and memories, all wrapped up.</div>
-      </details>
- 
-      <details class="jr-stop">
-        <summary>
-          <span class="jr-year">2026</span>
-          <span class="jr-title">Started internship at S N &amp; Co — Risk Advisory &amp; Forensic Audit</span>
-          <span class="jr-toggle">+</span>
-        </summary>
-        <div class="jr-body">Stepped into the professional world with an internship in <strong>Risk Advisory and Forensic Audit</strong> at S N &amp; Co — the first real taste of the industry.</div>
-      </details>
- 
-      <details class="jr-stop">
-        <summary>
-          <span class="jr-year">Sept 2026</span>
-          <span class="jr-title">Hopefully, my last ACCA paper</span>
-          <span class="jr-toggle">+</span>
-        </summary>
-        <div class="jr-body">Fingers crossed — this is set to be the final paper of the ACCA journey that started back in 2023.</div>
-      </details>
- 
-      <details class="jr-stop jr-final">
-        <summary>
-          <span class="jr-year">2026 →</span>
-          <span class="jr-title">Upcoming chapters loading...</span>
-          <span class="jr-toggle">+</span>
-        </summary>
-        <div class="jr-body">Now looking forward to beginning my professional journey very soon. Thank you for following along this far — the adventurous part is just getting started. 🌍</div>
-      </details>
-    </div>
- 
-    <div class="section-head reveal">
-      <div class="eyebrow">Customs Declaration</div>
-      <h2>Fun facts, personality &amp; house rules</h2>
-    </div>
-    <div class="jr-stamp-grid">
-      <div class="jr-stamp">
-        <span class="jr-icon">🗺️</span>
-        <h3>Life goal: collect places, not things</h3>
-        <p>The dream is to set foot in every Indian state — and honestly, every country too. Consider this your fair warning: I will be taking holidays.</p>
+    <div class="ledger">
+      <div class="ledger-row" style="cursor:default">
+        <div class="no">01</div>
+        <div class="title">Risk Advisory &amp; Forensic Audit Intern — SNCO<small>Internal audit and forensic review work at a mid-size advisory firm</small></div>
+        <div class="tag">Risk Advisory</div>
+        <div class="year">2025</div>
+        <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="10" cy="10" r="6"></circle><line x1="20" y1="20" x2="14.5" y2="14.5"></line></svg></div>
       </div>
-      <div class="jr-stamp">
-        <span class="jr-icon">⏰</span>
-        <h3>9-to-6 means 9-to-6</h3>
-        <p>Fully focused during working hours. Overtime is welcome — with pay. Unpaid overtime is a concept I have chosen not to believe in.</p>
+      <div class="ledger-row" style="cursor:default">
+        <div class="no">02</div>
+        <div class="title">Operations Associate Intern — Elmec Com Agencies<small>Vouching, tender verification, audit documentation and Excel-based reconciliations</small></div>
+        <div class="tag">Internal Audit</div>
+        <div class="year">Oct–Nov 2025</div>
+        <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="10" cy="10" r="6"></circle><line x1="20" y1="20" x2="14.5" y2="14.5"></line></svg></div>
       </div>
-      <div class="jr-stamp">
-        <span class="jr-icon">📵</span>
-        <h3>Once I clock out, I'm off the grid</h3>
-        <p>No work calls or messages after hours, please. That time belongs to my people, my plans, and me.</p>
+      <div class="ledger-row" style="cursor:default">
+        <div class="no">03</div>
+        <div class="title">Internal Audit &amp; Forensic Review — Quick Service Restaurant Chain<small>Compliance reviews, CAPEX verification, inventory testing and fraud-risk assessment</small></div>
+        <div class="tag">Forensic &amp; Audit</div>
+        <div class="year">Client confidential</div>
+        <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="10" cy="10" r="6"></circle><line x1="20" y1="20" x2="14.5" y2="14.5"></line></svg></div>
       </div>
-      <div class="jr-stamp">
-        <span class="jr-icon">🌱</span>
-        <h3>Give me a fair shot to learn</h3>
-        <p>I ask questions because I actually want to get it right. Be patient, skip the scolding, and let the results speak once I've figured it out — they will.</p>
+      <div class="ledger-row" style="cursor:default">
+        <div class="no">04</div>
+        <div class="title">Internal Audit Assignment — Automotive Dealership Group<small>Docket verification and testing of vehicle sales transactions using Tally</small></div>
+        <div class="tag">Forensic &amp; Audit</div>
+        <div class="year">Client confidential</div>
+        <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="10" cy="10" r="6"></circle><line x1="20" y1="20" x2="14.5" y2="14.5"></line></svg></div>
       </div>
-      <div class="jr-stamp">
-        <span class="jr-icon">🎈</span>
-        <h3>Family &amp; friends come first</h3>
-        <p>I work to fund the trips and to be there for the people I love — every function, every "we need you," every celebration. Those days are non-negotiable and don't need an explanation.</p>
-      </div>
-      <div class="jr-stamp">
-        <span class="jr-icon">💛</span>
-        <h3>Delicate corporate girl energy</h3>
-        <p>Kind words get the best out of me. I take feedback seriously — I just don't do well with scolding, and honestly, who does?</p>
-      </div>
-    </div>
- 
-    <div class="jr-postcard">
-      <div class="jr-mark">✈ wish you were here — postcard from my desk</div>
-      <blockquote>"A little progress each day adds up to big results."</blockquote>
-      <div class="jr-sig">— the motto I actually live by, Vidhi</div>
     </div>
   </div>
 </section>
@@ -339,15 +169,15 @@
 <section id="expertise">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow">Expertise</div>
-      <h2>Where I focus</h2>
-      <p>The areas I keep coming back to — and where most of the case studies below sit.</p>
+      <div class="eyebrow">Areas of Interest</div>
+      <h2>Where I'm headed</h2>
+      <p>The areas I'm building toward — through internships, ACCA papers, and the case studies below.</p>
     </div>
     <div class="stats" style="grid-template-columns:repeat(4,1fr)">
-      <div class="stat"><span class="lbl" style="font-family:var(--font-display);font-size:1.05rem;color:var(--ink)">Valuation</span></div>
-      <div class="stat"><span class="lbl" style="font-family:var(--font-display);font-size:1.05rem;color:var(--ink)">M&amp;A</span></div>
+      <div class="stat"><span class="lbl" style="font-family:var(--font-display);font-size:1.05rem;color:var(--ink)">Forensic Accounting</span></div>
+      <div class="stat"><span class="lbl" style="font-family:var(--font-display);font-size:1.05rem;color:var(--ink)">Internal Audit</span></div>
       <div class="stat"><span class="lbl" style="font-family:var(--font-display);font-size:1.05rem;color:var(--ink)">Risk Advisory</span></div>
-      <div class="stat"><span class="lbl" style="font-family:var(--font-display);font-size:1.05rem;color:var(--ink)">Financial Modelling</span></div>
+      <div class="stat"><span class="lbl" style="font-family:var(--font-display);font-size:1.05rem;color:var(--ink)">Financial Due Diligence</span></div>
     </div>
   </div>
 </section>
@@ -364,12 +194,58 @@
         write-up.
       </p>
     </div>
+    <div class="wheel-wrap">
+      <div class="wheel" id="category-wheel">
+        <div class="wheel-center" id="wheel-center">All<br>Case Studies</div>
+      </div>
+    </div>
     <div class="filters" id="filters"></div>
     <div class="ledger" id="ledger"></div>
   </div>
 </section>
  
-<!-- ACCA VIDEO LIBRARY (future service) -->
+<!-- CONCEPTS / GLOSSARY -->
+<section id="concepts">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Concepts</div>
+      <h2>Terms Worth Knowing</h2>
+      <p>A short, growing glossary of concepts I've come across studying finance and M&A — explained plainly.</p>
+    </div>
+    <div class="accordion reveal" id="accordion"></div>
+  </div>
+</section>
+ 
+<!-- TOOLKIT & RESOURCES -->
+<section id="toolkit" class="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Toolkit</div>
+      <h2>Tools of the Trade</h2>
+      <p>Software and platforms M&amp;A and finance professionals use day to day — ones I'm familiarising myself with as I build toward this field.</p>
+    </div>
+    <div class="toolkit-grid reveal">
+      <div class="tool-card"><h4>Bloomberg Terminal</h4><p>Market data, company financials and news, industry-standard for analysts and dealmakers.</p></div>
+      <div class="tool-card"><h4>S&amp;P Capital IQ</h4><p>Company financials, comps and screening — a core research tool for valuation work.</p></div>
+      <div class="tool-card"><h4>PitchBook</h4><p>Deal data on M&amp;A, private equity and venture capital transactions.</p></div>
+      <div class="tool-card"><h4>Datasite / Intralinks</h4><p>Virtual data rooms used to securely share documents during due diligence.</p></div>
+      <div class="tool-card"><h4>DealCloud</h4><p>CRM and deal-pipeline tracking used by advisory and PE teams.</p></div>
+      <div class="tool-card"><h4>Excel &amp; Macabacus</h4><p>Financial modelling — still the backbone of most valuation and M&amp;A work.</p></div>
+    </div>
+    <div class="section-head reveal">
+      <h2 style="font-size:1.5rem">Resources I Follow</h2>
+    </div>
+    <div class="resource-list reveal">
+      <a href="https://aswathdamodaran.blogspot.com/" target="_blank" rel="noopener"><span>Aswath Damodaran — Musings on Markets</span><span>↗</span></a>
+      <a href="https://mergersandinquisitions.com/" target="_blank" rel="noopener"><span>Mergers &amp; Inquisitions</span><span>↗</span></a>
+      <a href="https://www.wallstreetprep.com/knowledge/" target="_blank" rel="noopener"><span>Wall Street Prep — Knowledge Center</span><span>↗</span></a>
+    </div>
+ 
+    <div class="quiz-box reveal" id="quiz-box"></div>
+  </div>
+</section>
+ 
+ 
 <section id="acca-videos" class="videos">
   <div class="wrap">
     <div class="section-head reveal">
@@ -383,7 +259,7 @@
     <div class="video-grid" id="video-grid" style="display:none"></div>
     <div class="videos-empty" id="videos-empty">
       <p>The first videos are in production. Leave your email and I'll let you know the moment the library goes live.</p>
-      <a class="notify-btn" href="mailto:vidhivora02@gmail.com?subject=Notify%20me%20about%20ACCA%20videos">Notify Me →</a>
+      <a class="notify-btn" href="mailto:YOUR_EMAIL@example.com?subject=Notify%20me%20about%20ACCA%20videos">Notify Me →</a>
     </div>
   </div>
 </section>
@@ -395,16 +271,16 @@
       <div class="eyebrow">Contact</div>
       <h2>Let's talk</h2>
       <p style="color:var(--ink-soft); max-width:38ch">
-        Open to internships, project collaborations and roles in finance,
-        valuation or advisory. Reach out — I reply quickly.
+        Open to internships and roles in forensic accounting, internal audit,
+        risk advisory or financial due diligence. Reach out — I reply quickly.
       </p>
       <div class="item">
         <div class="lbl">Email</div>
-        <a href="mailto:vidhivora02@gmail.com">vidhivora02@gmail.com</a>
+        <a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a>
       </div>
       <div class="item">
         <div class="lbl">LinkedIn</div>
-        <a href="https://www.linkedin.com/in/vidhi-vora-317a64230?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener">linkedin.com/in/VIDHI.VORA</a>
+        <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">linkedin.com/in/YOUR-LINKEDIN</a>
       </div>
     </div>
     <form id="contact-form" class="reveal">
@@ -425,217 +301,12 @@
     </form>
   </div>
 </section>
-
-
- <!-- ============================================================
-     WHY HIRE ME — paste this ENTIRE block right BEFORE
-     the <footer> tag in index.html (i.e. after the </section>
-     that closes id="contact")
-     ============================================================ -->
- 
-<style>
-  #why-hire{ padding-top: 20px; }
-  #why-hire .wh-sub{
-    color: var(--ink-soft, #666);
-    max-width: 50ch;
-    margin: 0 0 40px;
-    line-height: 1.6;
-  }
- 
-  #why-hire .wh-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:18px;
-    margin-bottom:40px;
-  }
- 
-  #why-hire details.wh-card{
-    background:#fff;
-    border:1.5px solid var(--ink,#16213A);
-    border-radius:14px;
-    overflow:hidden;
-    position:relative;
-  }
-  #why-hire details.wh-card summary{
-    list-style:none; cursor:pointer;
-    padding:20px 20px 18px;
-    display:flex; flex-direction:column; gap:8px;
-  }
-  #why-hire details.wh-card summary::-webkit-details-marker{ display:none; }
-  #why-hire .wh-exhibit{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:1.5px; text-transform:uppercase;
-    color:#FF6B5B;
-  }
-  #why-hire .wh-headline{
-    font-family: var(--font-display,'Fraunces',serif);
-    font-size:16.5px; font-weight:600; color:var(--ink,#16213A);
-    line-height:1.4;
-  }
-  #why-hire .wh-toggle{
-    position:absolute; top:18px; right:18px;
-    font-size:18px; color:var(--ink,#16213A);
-    transition:transform .25s ease;
-  }
-  #why-hire details.wh-card[open] .wh-toggle{ transform:rotate(45deg); }
-  #why-hire .wh-body{
-    padding:0 20px 20px;
-    font-family:'Inter',sans-serif; font-size:13.5px; line-height:1.6;
-    color:var(--ink-soft,#444);
-    border-top:1px dashed rgba(0,0,0,0.12);
-    padding-top:14px;
-  }
-  #why-hire .wh-body strong{ color:var(--ink,#16213A); }
- 
-  #why-hire .wh-verdict{
-    background:#FF6B5B; color:#FFF8F0;
-    border-radius:18px; padding:36px 28px;
-    text-align:center; position:relative; overflow:hidden;
-  }
-  #why-hire .wh-verdict::before{
-    content:""; position:absolute; inset:9px;
-    border:1.5px dashed rgba(255,248,240,.5); border-radius:11px; pointer-events:none;
-  }
-  #why-hire .wh-verdict .wh-stamp{
-    font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:2px;
-    text-transform:uppercase; opacity:.85; margin-bottom:10px;
-  }
-  #why-hire .wh-verdict h3{
-    font-family: var(--font-display,'Fraunces',serif); font-weight:700;
-    font-size:clamp(20px,3vw,28px); margin:0 0 14px;
-  }
-  #why-hire .wh-verdict p{
-    font-family:'Inter',sans-serif; font-size:14px; line-height:1.6;
-    max-width:520px; margin:0 auto 20px; opacity:.95;
-  }
-  #why-hire .wh-verdict a.wh-cta{
-    display:inline-block; background:#FFF8F0; color:#FF6B5B;
-    font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:13px;
-    letter-spacing:.5px; padding:12px 24px; border-radius:30px;
-    text-decoration:none;
-  }
- 
-  @media(max-width:640px){
-    #why-hire .wh-headline{ font-size:15px; }
-  }
-</style>
- 
-<section id="why-hire">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Closing Arguments</div>
-      <h2>Why hire me over the other candidates</h2>
-      <p class="wh-sub">Ten exhibits, presented for your consideration. Tap each one for the full argument.</p>
-    </div>
- 
-    <div class="wh-grid">
- 
-      <details class="wh-card">
-        <summary>
-          <span class="wh-exhibit">Exhibit 01</span>
-          <span class="wh-headline">I already speak finance fluently</span>
-          <span class="wh-toggle">+</span>
-        </summary>
-        <div class="wh-body">In the final stretch of ACCA, which means I'm not learning the fundamentals on your time — I already have the technical base and I'm actively sharpening it every week.</div>
-      </details>
- 
-      <details class="wh-card">
-        <summary>
-          <span class="wh-exhibit">Exhibit 02</span>
-          <span class="wh-headline">Real reps, not just theory</span>
-          <span class="wh-toggle">+</span>
-        </summary>
-        <div class="wh-body">Hands-on experience through a <strong>Risk Advisory &amp; Forensic Audit</strong> internship at S N &amp; Co, plus prior work experience at Elmec — I've already sat in the room and done the work, not just read about it.</div>
-      </details>
- 
-      <details class="wh-card">
-        <summary>
-          <span class="wh-exhibit">Exhibit 03</span>
-          <span class="wh-headline">A self-built portfolio, before anyone asked</span>
-          <span class="wh-toggle">+</span>
-        </summary>
-        <div class="wh-body">Every case study and financial model on this site was built on my own initiative, not assigned as a job requirement. That's the kind of self-starter energy I bring by default.</div>
-      </details>
- 
-      <details class="wh-card">
-        <summary>
-          <span class="wh-exhibit">Exhibit 04</span>
-          <span class="wh-headline">Actual leadership experience</span>
-          <span class="wh-toggle">+</span>
-        </summary>
-        <div class="wh-body">Served as Chairperson of my college's leading committee — meaning I've already led people, owned outcomes, and made decisions under pressure, not just followed instructions.</div>
-      </details>
- 
-      <details class="wh-card">
-        <summary>
-          <span class="wh-exhibit">Exhibit 05</span>
-          <span class="wh-headline">Certified deadline-juggler</span>
-          <span class="wh-toggle">+</span>
-        </summary>
-        <div class="wh-body">Balanced a full college course load with ACCA papers running in parallel for years, often with overlapping exam seasons. Tight deadlines don't rattle me — I've been training for this.</div>
-      </details>
- 
-      <details class="wh-card">
-        <summary>
-          <span class="wh-exhibit">Exhibit 06</span>
-          <span class="wh-headline">Fast learner, faster adapter</span>
-          <span class="wh-toggle">+</span>
-        </summary>
-        <div class="wh-body">New tool, new software, new process — give me a short runway with a bit of patience and no unnecessary scolding, and I'll be flying it solo. The results speak for themselves once I've had the room to learn.</div>
-      </details>
- 
-      <details class="wh-card">
-        <summary>
-          <span class="wh-exhibit">Exhibit 07</span>
-          <span class="wh-headline">No-fluff communicator</span>
-          <span class="wh-toggle">+</span>
-        </summary>
-        <div class="wh-body">I'll give you the direct answer, not a ten-slide deck to bury it in. Clear, structured communication — the same way I approach a financial model.</div>
-      </details>
- 
-      <details class="wh-card">
-        <summary>
-          <span class="wh-exhibit">Exhibit 08</span>
-          <span class="wh-headline">Fully locked in, for the hours that count</span>
-          <span class="wh-toggle">+</span>
-        </summary>
-        <div class="wh-body">When I'm on the clock, I'm actually on — focused, no clock-watching. I just also believe the hours I commit to should be the hours I'm asked to give, which keeps me sharp instead of running on empty.</div>
-      </details>
- 
-      <details class="wh-card">
-        <summary>
-          <span class="wh-exhibit">Exhibit 09</span>
-          <span class="wh-headline">Low-drama, high-output</span>
-          <span class="wh-toggle">+</span>
-        </summary>
-        <div class="wh-body">I don't need micromanaging or hand-holding. Give me the goal and the context, and I'll find the way there — and if I need to double-check something, I'll ask upfront, not fumble silently.</div>
-      </details>
- 
-      <details class="wh-card">
-        <summary>
-          <span class="wh-exhibit">Exhibit 10</span>
-          <span class="wh-headline">I want to be good at this, not just employed</span>
-          <span class="wh-toggle">+</span>
-        </summary>
-        <div class="wh-body">Curiosity plus ambition means I outgrow a role quickly — which sounds risky until you realise that's exactly the kind of person you want compounding in your corner. A little progress each day adds up to a very different hire a year from now.</div>
-      </details>
- 
-    </div>
- 
-    <div class="wh-verdict">
-      <div class="wh-stamp">Verdict</div>
-      <h3>Hire recommended.</h3>
-      <p>Technically sound, self-driven, and genuinely easy to work with — with the added bonus of someone who'll show up recharged instead of running on fumes, because yes, I will be using my holidays.</p>
-      <a class="wh-cta" href="#contact">Let's talk →</a>
-    </div>
-  </div>
-</section>
  
 <footer>
   <div class="wrap footer-inner">
     <p>© <span id="year"></span> Vidhi Vora. Built with intent.</p>
     <div class="socials">
-      <a href="https://www.linkedin.com/in/vidhi-vora-317a64230?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
       <a href="mailto:YOUR_EMAIL@example.com">Email</a>
     </div>
   </div>
@@ -643,6 +314,24 @@
  
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal" id="modal-content"></div>
+</div>
+ 
+<!-- THEME SWITCHER -->
+<div class="theme-switcher" role="group" aria-label="Colour theme">
+  <button class="theme-dot active" data-t="ledger" title="Ledger (default)"></button>
+  <button class="theme-dot" data-t="blue" title="Blue Steel"></button>
+  <button class="theme-dot" data-t="noir" title="Noir"></button>
+</div>
+ 
+<!-- CALCULATOR -->
+<button class="calc-toggle" id="calc-toggle" aria-label="Open calculator">🧮</button>
+<div class="calc-panel" id="calc-panel">
+  <div class="calc-modes">
+    <button class="calc-mode-btn active" data-mode="basic">Basic</button>
+    <button class="calc-mode-btn" data-mode="scientific">Scientific</button>
+  </div>
+  <div class="calc-display" id="calc-display">0</div>
+  <div class="calc-grid" id="calc-grid"></div>
 </div>
  
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
